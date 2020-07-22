@@ -1,0 +1,38 @@
+#!/bin/bash
+set -euo pipefail
+IFS=$'\n\t'
+
+readonly SANDBOX_DIR=".sandbox"
+readonly PROJECT_NAME=$1
+
+# DEV: Setup sandbox
+if [[ -d "$SANDBOX_DIR" ]]; then
+    echo "Resetting sandbox"
+    rm -r "$SANDBOX_DIR"
+fi
+echo "Creating sandbox"
+mkdir "$SANDBOX_DIR"
+cd "$SANDBOX_DIR"
+
+
+# 0: Initialize git repo
+echo "Initializing git repository"
+git init
+
+
+# 1: Create readme
+echo "Creating README.md"
+echo "# $PROJECT_NAME" > README.md
+
+
+# 2: Get latest .gitignore
+echo "Downloading latest .gitignore for Visual Studio"
+wget -O .gitignore https://raw.githubusercontent.com/github/gitignore/master/VisualStudio.gitignore
+
+
+# n: Make initial commit
+echo "Initial commit"
+git config user.email "invalid-email"
+git config user.name "autorepo"
+git add .
+git commit -m "Initial commit"

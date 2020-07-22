@@ -1,3 +1,7 @@
-Dockerfile
 .dockerignore
 .git
+.sandbox
+
+Dockerfile
+run
+todo.txt

@@ -1,1 +1,1 @@
-docker run -v "$(pwd):/app" interact
+docker run -v "$(pwd):/app" autorepo TestProject

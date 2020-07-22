@@ -1,5 +1,0 @@
-#!/bin/bash
-
-echo "abcde" > file.txt
-pwd
-ls -a
