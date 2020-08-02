@@ -1,1 +1,1 @@
-docker run -v "$(pwd):/app" autorepo TestProject
+docker run -it --rm -v "$(pwd):/target" autorepo TestProject

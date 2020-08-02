@@ -1,3 +1,2 @@
-- Use getopts for better option handling
-    - Add --verbose option to turn on/off all the echoing
-    - Add ability to specify credentials
+- Add --verbose option to turn on/off all the echoing
+- Add ability to specify credentials
